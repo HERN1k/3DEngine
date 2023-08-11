@@ -6,6 +6,7 @@ set(ENGINE_PROJECT_NAME 3DEngineCore)
 set(ENGINE_PUBLIC_INCLUDES
 	includes/3DengineCore/Application.hpp
 	includes/3DengineCore/Log.hpp
+	includes/3DengineCore/Event.hpp
 )
 
 set(ENGINE_PRIVATE_INCLUDES

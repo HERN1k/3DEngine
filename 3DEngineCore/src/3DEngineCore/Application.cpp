@@ -20,6 +20,11 @@ namespace Engine3D {
 	int Application::start(unsigned int window_widht, unsigned int window_height, const char* title) {
 
 		m_pWindow = std::make_unique<Window>(title, window_widht, window_height);
+		m_pWindow->set_event_callback(
+			[](Event& event) {
+				LOG_INFO("[EVENT] Changed size to {0}x{1}", event.width, event.height);
+			}
+		);
 
 		while(true) {
 			m_pWindow->on_update();
