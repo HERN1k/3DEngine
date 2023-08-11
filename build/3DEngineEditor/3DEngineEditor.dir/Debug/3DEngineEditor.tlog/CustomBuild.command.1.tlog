@@ -1,0 +1,10 @@
+^C:\3DENGINE\3DENGINE\3DENGINEEDITOR\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/3DEngine/3DEngine -BC:/3DEngine/3DEngine/build --check-stamp-file C:/3DEngine/3DEngine/build/3DEngineEditor/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

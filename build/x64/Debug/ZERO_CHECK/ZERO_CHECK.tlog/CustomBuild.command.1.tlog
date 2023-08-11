@@ -1,0 +1,10 @@
+^C:\3DENGINE\3DENGINE\BUILD\CMAKEFILES\EEB8799C047951F46843384165C90E62\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/3DEngine/3DEngine -BC:/3DEngine/3DEngine/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/3DEngine/3DEngine/build/3DEngine.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
