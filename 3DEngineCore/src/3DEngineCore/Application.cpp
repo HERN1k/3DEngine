@@ -1,14 +1,23 @@
+#pragma once
+
+#include "3DEngineCore/Application.hpp"
+#include <GLFW/glfw3.h>
 #include <iostream>
 
-#include "3DEngineCore/Utils/test.hpp"
-
-#include <GLFW/glfw3.h>
-
-
 namespace Engine3D {
+	
+	Application::Application() {
+		
+	}
+	
+	Application::~Application() {
+		
 
-	int checkGLFW() {
-		std::cout << "Hello from 3DEngineCore!" << std::endl;
+
+	}
+
+	int Application::start(unsigned int window_wight, unsigned int window_height, const char* title) {
+
         GLFWwindow* window;
 
         /* Initialize the library */
@@ -16,7 +25,7 @@ namespace Engine3D {
             return -1;
 
         /* Create a windowed mode window and its OpenGL context */
-        window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+        window = glfwCreateWindow(window_wight, window_height, title, NULL, NULL);
         if (!window)
         {
             glfwTerminate();
@@ -37,10 +46,12 @@ namespace Engine3D {
 
             /* Poll for and process events */
             glfwPollEvents();
+
+            on_update();
         }
 
         glfwTerminate();
         return 0;
-	}
 
+	}
 }

@@ -1,11 +1,26 @@
 #include <iostream>
+#include <memory>
+#include <3DEngineCore/Application.hpp>
 
-#include  <3DEngineCore/Utils/test.hpp>
+class MyApp : public Engine3D::Application {
+	
+	virtual void on_update() override {
+		
+		std::cout << "Update frame: " << frame++ << std::endl;
+
+	}
+
+	int frame = 0;
+
+};
 
 int main() {
-	std::cout << "Hello from 3DEngineEditor!" << std::endl;
+	
+	auto myApp = std::make_unique<MyApp>();
 
-	Engine3D::checkGLFW();
+	int returnCode = myApp->start(800, 600, "3D image!");
 
 	std::cin.get();
+
+	return returnCode;
 }
