@@ -5,7 +5,7 @@
 int main() {
 	std::cout << "Hello from 3DEngineEditor!" << std::endl;
 
-	Engine3D::sayHello();
+	Engine3D::checkGLFW();
 
 	std::cin.get();
 }
