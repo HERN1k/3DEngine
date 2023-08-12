@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.27.1 FATAL_ERROR)
 
 set(PROJECT_NAME 3DEngine)
-#project(3DEngine)
+project(${PROJECT_NAME})
 
 add_subdirectory(3DEngineCore)
 add_subdirectory(3DEngineEditor)

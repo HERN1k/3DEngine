@@ -1,5 +1,6 @@
 #pragma once
 
+#include "3DEngineCore/Event.hpp"
 #include <memory>
 
 namespace Engine3D {
@@ -21,5 +22,8 @@ namespace Engine3D {
 
 	private:
 		std::unique_ptr<class Window> m_pWindow;
+
+		EventDispatcher m_event_dispatcher;
+		bool m_bCloseWindow = false;
 	};
 }
