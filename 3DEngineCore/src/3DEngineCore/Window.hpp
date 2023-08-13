@@ -43,6 +43,6 @@ namespace Engine3D {
 
 		GLFWwindow* m_pWindow = nullptr;
 		WindowData m_data;
-		float m_background_color[4] = { 0.f, 1.f, 1.f, 1.f };
+		float m_background_color[4] = { 1.0f, 0.0f, 1.0f, 1.0f };
 	};
 }
