@@ -40,9 +40,16 @@ namespace Engine3D {
 		bind();
 		vertex_buffer.bind();
 
-		glEnableVertexAttribArray(m_elements_count);
-		glVertexAttribPointer(m_elements_count, 3, GL_FLOAT, GL_FALSE, 0, nullptr);
-
-		++m_elements_count;
+		for (const BufferElement& courent_element : vertex_buffer.get_layout().get_elements()) {
+			glEnableVertexAttribArray(m_elements_count);
+			glVertexAttribPointer(m_elements_count, 
+				static_cast<GLint>(courent_element.components_count),
+				courent_element.component_type,
+				GL_FALSE,
+				static_cast<GLsizei>(vertex_buffer.get_layout().get_stride()),
+				reinterpret_cast<const void*>(courent_element.offset)
+				);
+			++m_elements_count;
+		}
 	}
 }
